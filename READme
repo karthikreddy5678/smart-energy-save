@@ -1,0 +1,103 @@
+Sure! Heres your `README.md` file **without any hashtags**, keeping it clean and professional:
+
+---
+
+**Smart Home Visual Dashboard**
+
+This project is an interactive Python dashboard that simulates smart home movement patterns, compresses movement sequences using LZ-78, and predicts typical user behavior to optimize energy usage and comfort levels.
+
+---
+
+**Features**
+
+- Movement Simulation: Generates a synthetic sequence of room visits by an inhabitant.
+- Data Visualization:
+  - Room visit frequency (bar chart)
+  - Movement path over time (line plot)
+  - Room-to-room transitions (Sankey diagram)
+- LZ-78 Dictionary Compression:
+  - Encodes movement sequences using the LZ78 algorithm
+  - Visualizes the top extracted phrases
+- Movement Prediction:
+  - Uses the compressed structure to predict typical paths
+- Smart Resource Management:
+  - Estimates energy savings based on predicted behavior
+  - Computes comfort score based on environment factors
+
+---
+
+**How It Works**
+
+1. Simulate Movement  
+   The `simulate_movement()` function generates synthetic data of room transitions, modeling the inhabitants day-to-day movement.
+
+2. Visualize Movement Patterns  
+   Plotly is used to display:
+   - Room visit frequency
+   - Time-based room transitions
+   - Room-to-room flow via a Sankey diagram
+
+3. Compress Movement using LZ-78  
+   A custom `LZ78Trie` compresses the sequence of movements, which is then visualized by frequency of common phrases.
+
+4. Predict Typical Paths  
+   The `Predictor` class analyzes the trie to identify and output frequently occurring paths.
+
+5. Optimize Energy & Comfort  
+   `EnergyManager` estimates energy savings by aligning systems with predicted behavior, while `ComfortModel` calculates a comfort score based on environmental inputs.
+
+---
+
+**Requirements**
+
+- Python 3.x  
+- Plotly  
+- Jupyter Notebook or Google Colab (for interactive use)
+
+Install dependencies:
+
+```
+pip install plotly
+```
+
+Make sure the following custom modules are present:
+
+- `mobility_profile.py`
+- `lz_trie.py`
+- `prediction.py`
+- `resource_manager.py`
+- `comfort_model.py`
+
+---
+
+**Sample Output**
+
+```
+🏠 SMART HOME VISUAL DASHBOARD
+
+👣 Movement Sequence: LivingRoom → Kitchen → Bedroom → ...
+
+🎯 Summary
+   - Total Rooms Visited: 5
+   - Total LZ-78 Phrases Extracted: 18
+   - Typical Paths Predicted: 4
+   - ⚡ Energy Saved: 2.43 kWh
+   - 😌 Comfort Score: 8.67/10
+```
+
+---
+
+**Project Structure**
+
+```
+smart-home-dashboard/
+│
+├── main.py                  (Main dashboard script)
+├── mobility_profile.py      (Simulates movement data)
+├── lz_trie.py               (LZ-78 Trie implementation)
+├── prediction.py            (Predicts movement paths)
+├── resource_manager.py      (Energy saving logic)
+├── comfort_model.py         (Comfort score evaluation)
+```
+
+Let me know if you also want a PDF version of this or if you'd like a sample Colab link description!
